@@ -1,0 +1,81 @@
+{% extends 'sewingRoom/base.html' %}
+{% load static %}
+
+{% block content %}
+    <section>
+        <div class="home_page_main">
+            <h1>Добро пожаловать в AimaKg</h1>
+        </div>
+    </section>
+    <section class="mt-5">
+        <div class="container">
+            <div class="intro_main row">
+                <div class="col-12 col-md-6 intro_img">
+                    <img src="images/pic-big-1.png" alt="" class="w-80">
+                </div>
+                <div class="col-12 col-md-6 intro_main_text">
+                    <h1 class="title">Find <span class="text-green">the perfect</span>  job fast </h1>
+                    <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat molestiae ipsa accusamus minus, eos nostrum, quam cupiditate totam sint eius nesciunt impedit qui unde saepe beatae distinctio nobis fuga aliquam?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-5 talen_section">
+        <div class="container">
+            <div class="row talents_main">
+                <div class="col-12 col-md-6 talents">
+                    <h1 class="title">Great <span class="text-green">work starts</span>  with great talent </h1>
+                    <ul>
+                        <li class="talent text">Get amazing result working with the best programmers</li>
+                        <li class="talent text">Designers, writers and other top online pros</li>
+                        <li class="talent text">Hire freelancer with confidence, always knowing</li>
+                        <li class="talent text">Their work experience and feedback from other clients</li>
+                        <li class="talent text">Designers, writers and other top online pros.</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 talent-img">
+                    <img src="images/pic-big-2.png" alt="" class="w-80">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="card-main">
+        <div class="container">
+            <h1 class="title">Recent Work Done on <span class="text-green">JOB BOARD</span> </h1>
+            <div class="row row-cols-1 row-cols-md-2  row-cols-lg-3 row-cols-xl-4 g-4">
+                {% for dress in dresses %}
+
+                        <div class="col">
+                            <div class="card h-100 margin0auto" style="width: 16rem;">
+                                <img src="{{ dress.photo.url }}" class="card-img-top modal-photo" alt="...">
+                                <div class="card-body">
+                                    <a class="btn btn-success w-60 br-0 modal-open" >{{ dress.title }}</a>
+                                    <p class="cards-text modals-text">{{ dress.text }}</p>
+                                </div>
+                              </div>
+                        </div>
+
+
+                {% endfor %}
+            </div>
+
+        <div class="modal-blur" id="modal-main">
+            <div class="modal-window">
+                <a href="" class="close"></a>
+                <img src="" alt="" id="modal-photo">
+                <p id="modal-text"></p>
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            <p>© 2015 JOB BOARD Landing Page By Mike Taylor</p>
+        </div>
+    </footer>
+{% endblock %}
